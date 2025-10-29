@@ -1,0 +1,21 @@
+{
+  "name": "poke-oura-sleep-alert",
+  "version": "1.0.0",
+  "description": "Oura sleep check alert – Node 18, MIT, webhook to Poke",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node index.mjs",
+    "test:notify": "node notify.test.mjs"
+  },
+  "keywords": ["oura", "sleep", "poke", "webhook", "notification"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
