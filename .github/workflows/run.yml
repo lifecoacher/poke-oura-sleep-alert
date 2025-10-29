@@ -1,9 +1,16 @@
 name: Oura Sleep Check
 
 on:
-  # Schedule is disabled by default. To enable daily runs at 8 AM Eastern (noon UTC), uncomment:
-  # schedule:
-  #   - cron: '0 12 * * *'  # Runs at 12:00 PM UTC = 8:00 AM EST / 7:00 AM EDT
+  # Daily schedule - GitHub Actions uses UTC time
+  # Default: 12:00 UTC = 8:00 AM EDT (New York during Daylight Saving Time)
+  schedule:
+    - cron: '0 12 * * *'
+  
+  # Alternative cron schedules for EST/EDT transitions:
+  # For 8:00 AM EDT (Daylight Saving Time, ~March-November): '0 12 * * *' (12:00 UTC)
+  # For 8:00 AM EST (Standard Time, ~November-March): '0 13 * * *' (13:00 UTC)
+  # Adjust the active cron line above when DST changes if exact local time is critical.
+  
   workflow_dispatch:  # Allows manual triggering from GitHub UI
 
 jobs:
